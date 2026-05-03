@@ -34,6 +34,7 @@
 - **多AI提供商** - 支持OpenAI、Claude、Gemini等多个AI服务
 - **自定义配置** - 灵活的UI和功能配置选项
 - **数据安全** - 所有数据处理均在本地完成，不上传用户文件
+- **多语言支持** - 支持英文和中文界面切换
 
 ---
 
@@ -48,14 +49,14 @@
 ### 安装
 
 #### 方式一：使用预编译版本
-从 [Releases](https://github.com/yourusername/AiAssistant/releases) 页面下载最新版本的安装程序。
+从 [Releases](https://github.com/Li-j1a/ai-file-organizer/releases) 页面下载最新版本的安装程序。
 
 #### 方式二：从源代码构建
 
 1. **克隆仓库**
 ```bash
-git clone https://github.com/yourusername/AiAssistant.git
-cd AiAssistant
+git clone https://github.com/Li-j1a/ai-file-organizer.git
+cd ai-file-organizer
 ```
 
 2. **安装依赖**
@@ -123,6 +124,7 @@ npm run build
 - **主题色** - 自定义应用主题
 - **透明度** - 调整窗口透明度
 - **模糊效果** - 启用/禁用背景模糊
+- **语言** - 支持英文和中文界面切换
 
 ---
 
@@ -130,7 +132,7 @@ npm run build
 
 ### 项目结构
 ```
-AiAssistant/
+ai-file-organizer/
 ├── src/
 │   ├── main/              # Electron 主进程
 │   │   └── index.js       # 主进程入口
@@ -139,6 +141,7 @@ AiAssistant/
 │   └── renderer/          # React 渲染进程
 │       └── src/
 │           ├── App.jsx    # 主应用组件
+│           ├── locales.js # 多语言翻译
 │           ├── pages/     # 页面组件
 │           └── components/# 可复用组件
 ├── public/                # 静态资源
@@ -190,6 +193,10 @@ window.electronAPI.analyzeFile(filePath)
 // 系统
 window.electronAPI.getSpecialPaths()
 window.electronAPI.checkDisclaimerAgreed()
+
+// 多语言
+window.electronAPI.setLanguage(lang)
+window.electronAPI.getLanguage()
 ```
 
 ### 添加新功能
@@ -249,7 +256,7 @@ const result = await window.electronAPI.featureName(params)
 欢迎提交 Issue 和 Pull Request！
 
 ### 报告问题
-- 使用 [GitHub Issues](https://github.com/yourusername/AiAssistant/issues) 报告 Bug
+- 使用 [GitHub Issues](https://github.com/Li-j1a/ai-file-organizer/issues) 报告 Bug
 - 提供详细的复现步骤和环境信息
 
 ### 提交改进建议
@@ -284,7 +291,7 @@ const result = await window.electronAPI.featureName(params)
 - 📝 代码行数: 5000+
 - 📦 依赖包数: 100+
 - 🔧 支持平台: Windows, macOS, Linux
-- 🌍 支持语言: 中文, English (计划中)
+- 🌍 支持语言: 中文, English
 
 ---
 
